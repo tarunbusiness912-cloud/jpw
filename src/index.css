@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #111111;
+  background: #f7f6f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f7f6f2;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------
+   GLOBAL CONTAINER
+-------------------------------------------------- */
+
+.jp-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+@media (min-width: 640px) {
+  .jp-container {
+    padding-inline: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .jp-container {
+    padding-inline: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .jp-container {
+    padding-inline: 64px;
+  }
+}
+
+/* --------------------------------------------------
+   SECTION SPACING
+-------------------------------------------------- */
+
+.jp-section {
+  padding-block: 80px;
+}
+
+@media (min-width: 640px) {
+  .jp-section {
+    padding-block: 96px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .jp-section {
+    padding-block: 120px;
+  }
+}
+
+/* --------------------------------------------------
+   ANIMATION HELPERS
+-------------------------------------------------- */
+
+.jp-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: jpFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.jp-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.jp-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.jp-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.jp-delay-4 {
+  animation-delay: 0.4s;
+}
+
+@keyframes jpFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------
+   IMAGE REVEAL
+-------------------------------------------------- */
+
+.jp-image-reveal {
+  overflow: hidden;
+}
+
+.jp-image-reveal img {
+  transform: scale(1.04);
+  animation: jpImageReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes jpImageReveal {
+  to {
+    transform: scale(1);
+  }
+}
+
+/* --------------------------------------------------
+   REDUCED MOTION
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
